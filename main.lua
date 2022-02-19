@@ -197,8 +197,6 @@ end
 
 
 function module:AddEmitter(ParticleEmitter, Scale, Position)
-	print("Adding Particle:", ParticleEmitter)
-	
 	table.insert(Emitters, {Emitter=ParticleEmitter, lastEmission = tick(), Scale=Scale or 1})
   
   if Position then
@@ -207,8 +205,6 @@ function module:AddEmitter(ParticleEmitter, Scale, Position)
 end
 
 function module:RemoveEmitter(ParticleEmitter)
-	print("Removing Particle:", ParticleEmitter)
-	
 	local toRemove = {}
 	
 	for _, Data in pairs(Emitters) do
