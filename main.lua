@@ -202,7 +202,7 @@ function module:AddEmitter(ParticleEmitter, Scale, Position)
 	table.insert(Emitters, {Emitter=ParticleEmitter, lastEmission = tick(), Scale=Scale or 1})
   
   if Position then
-    Emitters[ParticleEmitter] = Position
+    Positions[ParticleEmitter] = Position
   end
 end
 
