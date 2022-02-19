@@ -217,6 +217,7 @@ function module:RemoveEmitter(ParticleEmitter)
 	for _,Particle in pairs(toRemove) do
 		table.remove(Emitters, table.find(Emitters, Particle))
 	end
+	table.remove(Positions, ParticleEmitter)
 end
 
 return module
