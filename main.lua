@@ -1,6 +1,6 @@
-local module= {}
 -- Credits to xHashiru, this repo adds position support to the particles
 
+local module = {}
 local ra = Random.new()
 
 local Emitters = {}
