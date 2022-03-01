@@ -1,10 +1,9 @@
--- Credits to xHashiru, this repo adds position support to the particles
+-- Credits to xHashiru, I just made this to remove the print
 
 local module = {}
 local ra = Random.new()
 
 local Emitters = {}
-local Positions = {}
 
 local ParticleQueue = {}
 
@@ -139,7 +138,7 @@ function addParticle(ParticleEmitter, UI_Parent, Scale)
 	new.Image = ParticleEmitter.Texture
 	new.ZIndex = ParticleEmitter.ZOffset
 	
-	local StartPos = Positions[ParticleEmitter] or UDim2.new(r_num(0,1),0,r_num(0,1),0)
+	local StartPos = UDim2.new(r_num(0,1),0,r_num(0,1),0)
 	new.Position = StartPos
 	
 	local Color = ParticleEmitter.Color.Keypoints[1]
@@ -196,12 +195,8 @@ end
 
 
 
-function module:AddEmitter(ParticleEmitter, Scale, Position)
+function module:AddEmitter(ParticleEmitter, Scale)
 	table.insert(Emitters, {Emitter=ParticleEmitter, lastEmission = tick(), Scale=Scale or 1})
-  
-  if Position then
-    Positions[ParticleEmitter] = Position
-  end
 end
 
 function module:RemoveEmitter(ParticleEmitter)
@@ -217,7 +212,6 @@ function module:RemoveEmitter(ParticleEmitter)
 	for _,Particle in pairs(toRemove) do
 		table.remove(Emitters, table.find(Emitters, Particle))
 	end
-	Positions[ParticleEmitter] = nil
 end
 
 return module
