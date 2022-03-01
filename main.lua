@@ -1,5 +1,4 @@
 -- Credits to xHashiru https://github.com/xHashiru/GUI-ParticleEmitter/blob/master/Modules/UI_EmitterModule.lua 
--- I just made this to remove printing
 
 local module = {}
 local ra = Random.new()
